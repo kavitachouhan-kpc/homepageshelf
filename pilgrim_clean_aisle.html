@@ -1,0 +1,251 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+.stage{background:#E2DED8;padding:28px 16px 36px;display:flex;flex-direction:column;align-items:center}
+.phone{width:355px;background:#1a1a1a;border-radius:50px;padding:10px;box-shadow:0 2px 0 2px #0a0a0a}
+.pi{border-radius:42px;overflow:hidden;background:#fff}
+
+.sb{background:#fff;padding:14px 22px 0;display:flex;align-items:center;justify-content:space-between}
+.sb-t{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:#111}
+.sb-r{display:flex;align-items:center;gap:5px}
+
+.topnav{display:flex;align-items:center;justify-content:space-between;padding:9px 18px 10px;border-bottom:1px solid #EFEFEF;background:#fff}
+.logo{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;letter-spacing:4px;text-transform:uppercase;color:#111}
+.nr{display:flex;gap:14px}
+.ni{width:17px;height:17px;stroke:#111;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+.tabs{
+  display:flex;overflow-x:auto;scrollbar-width:none;
+  padding:0 16px;
+  border-bottom:2px solid #F0EFEF;
+  background:#fff;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:0 0 auto;
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:400;
+  color:#bbb;padding:10px 13px 9px;white-space:nowrap;
+  border-bottom:2px solid transparent;
+  margin-bottom:-2px;
+  transition:color 0.2s,border-color 0.2s;
+}
+.tab.active{color:#111;font-weight:500;border-bottom-color:#111}
+
+.row-wrap{
+  overflow:hidden;
+  background:#fff;
+  height:430px;
+}
+
+.row{
+  display:flex;
+  align-items:stretch;
+  height:100%;
+  overflow-x:scroll;
+  overflow-y:hidden;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.row::-webkit-scrollbar{display:none}
+
+.pc{
+  width:152px;
+  flex-shrink:0;
+  border-right:1px solid #F5F2EF;
+  display:flex;flex-direction:column;
+  padding:14px 13px 13px;
+  cursor:pointer;
+  background:#fff;
+}
+.pc-img{
+  width:100%;
+  flex:1;
+  min-height:0;
+  background:#F7F4F0;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:11px;
+  position:relative;
+  overflow:hidden;
+}
+.bdg{
+  position:absolute;top:8px;left:8px;
+  font-family:'Inter',sans-serif;font-size:7px;font-weight:500;
+  letter-spacing:0.8px;text-transform:uppercase;padding:3px 6px;
+}
+.bdg-d{background:#111;color:#fff}
+.bdg-l{background:#fff;color:#111;border:0.5px solid #ddd}
+.pc-cat{font-family:'Inter',sans-serif;font-size:8px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:#bbb;margin-bottom:3px;flex-shrink:0}
+.pc-name{font-family:'Playfair Display',serif;font-size:13px;font-weight:400;color:#111;line-height:1.25;margin-bottom:9px;flex-shrink:0}
+.pc-bot{display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.pc-price{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:#111}
+.pc-rat{font-family:'Inter',sans-serif;font-size:9px;color:#ccc}
+.bag{width:26px;height:26px;border:1px solid #111;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+.cat-sep{
+  width:44px;flex-shrink:0;
+  background:#F9F6F2;
+  border-left:1px solid #EEEAE4;
+  border-right:1px solid #EEEAE4;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0;
+}
+.sep-text{
+  font-family:'Playfair Display',serif;font-size:10px;font-style:italic;
+  color:#C8C3BC;
+  writing-mode:vertical-rl;
+  letter-spacing:1px;
+}
+
+.ban{
+  width:160px;flex-shrink:0;
+  background:#111;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:18px 16px;
+  cursor:pointer;
+  position:relative;overflow:hidden;
+}
+.ban-deco{position:absolute;top:-10px;right:-10px;opacity:0.08}
+.ban-ey{font-family:'Inter',sans-serif;font-size:8px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#777;margin-bottom:6px}
+.ban-ti{font-family:'Playfair Display',serif;font-size:16px;font-weight:400;font-style:italic;color:#fff;line-height:1.2;margin-bottom:10px}
+.ban-ct{font-family:'Inter',sans-serif;font-size:8px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,0.3);padding-bottom:2px;display:inline-block}
+</style>
+
+<div class="stage">
+<div class="phone">
+<div class="pi">
+
+  <div class="sb">
+    <span class="sb-t">9:41</span>
+    <div class="sb-r">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><rect x="0" y="3" width="2.5" height="7" rx="0.4" fill="#111"/><rect x="3.8" y="2" width="2.5" height="8" rx="0.4" fill="#111"/><rect x="7.6" y="0.8" width="2.5" height="9.2" rx="0.4" fill="#111"/><rect x="11.4" y="0" width="2.5" height="10" rx="0.4" fill="#111" opacity="0.2"/></svg>
+      <svg width="16" height="11" viewBox="0 0 16 11" fill="none"><rect x="0.5" y="0.5" width="13" height="10" rx="1.5" stroke="#111" stroke-width="1.2" fill="none"/><rect x="14" y="3.5" width="1.5" height="4" rx="0.8" fill="#111" opacity="0.4"/><rect x="2" y="2" width="9" height="7" rx="0.5" fill="#111"/></svg>
+    </div>
+  </div>
+
+  <div class="topnav">
+    <svg width="15" height="12" viewBox="0 0 18 14" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round"><line x1="1" y1="2" x2="17" y2="2"/><line x1="1" y1="7" x2="17" y2="7"/><line x1="1" y1="12" x2="11" y2="12"/></svg>
+    <div class="logo">Pilgrim</div>
+    <div class="nr">
+      <svg class="ni" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+      <svg class="ni" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    </div>
+  </div>
+
+  <div class="tabs" id="tabs">
+    <div class="tab active" data-i="0">Bestsellers</div>
+    <div class="tab" data-i="1">Skincare</div>
+    <div class="tab" data-i="2">Hair care</div>
+    <div class="tab" data-i="3">Makeup</div>
+    <div class="tab" data-i="4">Fragrance</div>
+    <div class="tab" data-i="5">Body care</div>
+  </div>
+
+  <div class="row-wrap">
+  <div class="row" id="row">
+
+    <div class="pc" data-cat="0"><div class="pc-img" style="background:#F0EDE8"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="20" y="10" width="20" height="58" rx="3" fill="#E0DAD0"/><rect x="20" y="10" width="20" height="13" rx="3" fill="#CEC8BC"/><rect x="24" y="6" width="12" height="6" rx="2" fill="#C0BAB0"/><text x="30" y="45" font-size="6" fill="#666" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500">REDENSYL</text></svg><div class="bdg bdg-l">Trending</div></div><div class="pc-cat">Hair serum</div><div class="pc-name">Redensyl Hair Growth Serum</div><div class="pc-bot"><div><div class="pc-price">₹599</div><div class="pc-rat">★ 4.8</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="0"><div class="pc-img" style="background:#F5F0EB"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="22" y="10" width="16" height="58" rx="3" fill="#E8E3DA"/><rect x="22" y="10" width="16" height="12" rx="3" fill="#D5D0C5"/><rect x="25" y="6" width="10" height="5" rx="2" fill="#C8C2B5"/><text x="30" y="42" font-size="6" fill="#555" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500">10%</text><text x="30" y="51" font-size="5.5" fill="#888" text-anchor="middle" font-family="Inter,sans-serif">VIT C</text></svg><div class="bdg bdg-d">No.1</div></div><div class="pc-cat">Serum</div><div class="pc-name">Vitamin C Brightening Serum</div><div class="pc-bot"><div><div class="pc-price">₹599</div><div class="pc-rat">★ 4.9</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="0"><div class="pc-img" style="background:#EEF2F0"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="13" y="24" width="34" height="36" rx="17" fill="#DDE8E2"/><rect x="17" y="13" width="26" height="13" rx="5" fill="#CDD8D2"/><rect x="21" y="9" width="18" height="6" rx="2" fill="#BEC8C2"/><text x="30" y="48" font-size="6" fill="#3A6A52" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500">SPF 50</text></svg></div><div class="pc-cat">Sunscreen</div><div class="pc-name">Invisible Matte SPF 50</div><div class="pc-bot"><div><div class="pc-price">₹449</div><div class="pc-rat">★ 4.7</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="0"><div class="pc-img" style="background:#F0EEF5"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="22" y="10" width="16" height="58" rx="3" fill="#E5E0EE"/><rect x="22" y="10" width="16" height="12" rx="3" fill="#D0C8E0"/><rect x="25" y="6" width="10" height="5" rx="2" fill="#C0B8D5"/><text x="30" y="42" font-size="6" fill="#555" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500">10%</text><text x="30" y="51" font-size="5.5" fill="#888" text-anchor="middle" font-family="Inter,sans-serif">NIACIN</text></svg></div><div class="pc-cat">Serum</div><div class="pc-name">Niacinamide 10% Serum</div><div class="pc-bot"><div><div class="pc-price">₹545</div><div class="pc-rat">★ 4.8</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="0"><div class="pc-img" style="background:#F5F5EE"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="11" y="10" width="38" height="58" rx="4" fill="#E8E5D5"/><rect x="11" y="10" width="38" height="16" rx="4" fill="#D8D4C0"/><rect x="17" y="6" width="26" height="6" rx="2" fill="#C8C4AC"/><text x="30" y="46" font-size="5.5" fill="#666" text-anchor="middle" font-family="Inter,sans-serif">RICE WATER</text></svg></div><div class="pc-cat">Moisturiser</div><div class="pc-name">Rice Water Hydra Glow</div><div class="pc-bot"><div><div class="pc-price">₹449</div><div class="pc-rat">★ 4.8</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="cat-sep" data-sep="1"><div class="sep-text">Skincare</div></div>
+
+    <div class="pc" data-cat="1"><div class="pc-img" style="background:#F5F0EB"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="22" y="10" width="16" height="58" rx="3" fill="#E8E3DA"/><rect x="22" y="10" width="16" height="12" rx="3" fill="#D5D0C5"/><rect x="25" y="6" width="10" height="5" rx="2" fill="#C8C2B5"/><text x="30" y="42" font-size="6" fill="#555" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500">10%</text><text x="30" y="51" font-size="5.5" fill="#888" text-anchor="middle" font-family="Inter,sans-serif">VIT C</text></svg><div class="bdg bdg-l">Most loved</div></div><div class="pc-cat">Serum</div><div class="pc-name">Vitamin C 10% Serum</div><div class="pc-bot"><div><div class="pc-price">₹599</div><div class="pc-rat">★ 4.9</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="1"><div class="pc-img" style="background:#EEF2F0"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="13" y="24" width="34" height="36" rx="17" fill="#DDE8E2"/><rect x="17" y="13" width="26" height="13" rx="5" fill="#CDD8D2"/><rect x="21" y="9" width="18" height="6" rx="2" fill="#BEC8C2"/><text x="30" y="48" font-size="6" fill="#3A6A52" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500">SPF 50</text></svg><div class="bdg bdg-d">New</div></div><div class="pc-cat">Sunscreen</div><div class="pc-name">Invisible Matte Sunscreen</div><div class="pc-bot"><div><div class="pc-price">₹449</div><div class="pc-rat">★ 4.7</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="1"><div class="pc-img" style="background:#FBF0EA"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="22" y="10" width="16" height="58" rx="3" fill="#F0DDD0"/><rect x="22" y="10" width="16" height="12" rx="3" fill="#DEC8B8"/><rect x="25" y="6" width="10" height="5" rx="2" fill="#D0B8A5"/><text x="30" y="42" font-size="5.5" fill="#8A4020" text-anchor="middle" font-family="Inter,sans-serif">RETINOL</text><text x="30" y="51" font-size="5" fill="#8A4020" text-anchor="middle" font-family="Inter,sans-serif">0.3%</text></svg></div><div class="pc-cat">Serum</div><div class="pc-name">Retinol Night Renewal Serum</div><div class="pc-bot"><div><div class="pc-price">₹699</div><div class="pc-rat">★ 4.6</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="ban" data-cat="1"><div class="ban-deco"><svg width="120" height="120" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="58" stroke="white" stroke-width="1"/><circle cx="60" cy="60" r="40" stroke="white" stroke-width="1"/><circle cx="60" cy="60" r="22" stroke="white" stroke-width="1"/></svg></div><div class="ban-ey">New collection</div><div class="ban-ti">The Spanish red vine edit</div><div class="ban-ct">Explore →</div></div>
+
+    <div class="pc" data-cat="1"><div class="pc-img" style="background:#EAF2F8"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="22" y="10" width="16" height="58" rx="3" fill="#D8EAF4"/><rect x="22" y="10" width="16" height="12" rx="3" fill="#C5D8E8"/><rect x="25" y="6" width="10" height="5" rx="2" fill="#B5C8DC"/><text x="30" y="41" font-size="5" fill="#2A6090" text-anchor="middle" font-family="Inter,sans-serif">HYALU-</text><text x="30" y="50" font-size="5" fill="#2A6090" text-anchor="middle" font-family="Inter,sans-serif">RONIC</text></svg></div><div class="pc-cat">Serum</div><div class="pc-name">Hyaluronic Acid 2% Serum</div><div class="pc-bot"><div><div class="pc-price">₹549</div><div class="pc-rat">★ 4.7</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="1"><div class="pc-img" style="background:#F5F5EE"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="11" y="10" width="38" height="58" rx="4" fill="#E8E5D5"/><rect x="11" y="10" width="38" height="16" rx="4" fill="#D8D4C0"/><rect x="17" y="6" width="26" height="6" rx="2" fill="#C8C4AC"/><text x="30" y="46" font-size="5.5" fill="#666" text-anchor="middle" font-family="Inter,sans-serif">CERAMIDE</text></svg></div><div class="pc-cat">Moisturiser</div><div class="pc-name">Ceramide Barrier Cream</div><div class="pc-bot"><div><div class="pc-price">₹549</div><div class="pc-rat">★ 4.8</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="cat-sep" data-sep="2"><div class="sep-text">Hair care</div></div>
+
+    <div class="pc" data-cat="2"><div class="pc-img" style="background:#F0EDE8"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="20" y="10" width="20" height="58" rx="3" fill="#E0DAD0"/><rect x="20" y="10" width="20" height="13" rx="3" fill="#CEC8BC"/><rect x="24" y="6" width="12" height="6" rx="2" fill="#C0BAB0"/><text x="30" y="45" font-size="6" fill="#666" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500">REDENSYL</text></svg><div class="bdg bdg-l">Trending</div></div><div class="pc-cat">Hair serum</div><div class="pc-name">Redensyl Growth Serum</div><div class="pc-bot"><div><div class="pc-price">₹599</div><div class="pc-rat">★ 4.8</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="2"><div class="pc-img" style="background:#EAF2EE"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="11" y="10" width="38" height="58" rx="4" fill="#D0E5D8"/><rect x="11" y="10" width="38" height="16" rx="4" fill="#B8D5C5"/><rect x="17" y="6" width="26" height="6" rx="2" fill="#A8C8B5"/><text x="30" y="46" font-size="5.5" fill="#2A6A42" text-anchor="middle" font-family="Inter,sans-serif">TEA TREE</text></svg></div><div class="pc-cat">Shampoo</div><div class="pc-name">Anti-Dandruff Tea Tree Shampoo</div><div class="pc-bot"><div><div class="pc-price">₹399</div><div class="pc-rat">★ 4.7</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="2"><div class="pc-img" style="background:#F8F0EA"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="11" y="10" width="38" height="58" rx="4" fill="#EAD5C0"/><rect x="11" y="10" width="38" height="16" rx="4" fill="#D8C0A5"/><rect x="17" y="6" width="26" height="6" rx="2" fill="#C8AE90"/><text x="30" y="46" font-size="5.5" fill="#7A4A20" text-anchor="middle" font-family="Inter,sans-serif">ROSEMARY</text></svg><div class="bdg bdg-d">New</div></div><div class="pc-cat">Hair oil</div><div class="pc-name">Spanish Rosemary Hair Oil</div><div class="pc-bot"><div><div class="pc-price">₹449</div><div class="pc-rat">★ 4.6</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="2"><div class="pc-img" style="background:#F5F0F8"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="11" y="10" width="38" height="58" rx="4" fill="#DDD0EC"/><rect x="11" y="10" width="38" height="16" rx="4" fill="#C8B8DC"/><rect x="17" y="6" width="26" height="6" rx="2" fill="#B8A5CC"/><text x="30" y="46" font-size="5.5" fill="#4A2A7A" text-anchor="middle" font-family="Inter,sans-serif">RICE WATER</text></svg></div><div class="pc-cat">Conditioner</div><div class="pc-name">Rice Water Conditioner</div><div class="pc-bot"><div><div class="pc-price">₹349</div><div class="pc-rat">★ 4.8</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="cat-sep" data-sep="3"><div class="sep-text">Makeup</div></div>
+
+    <div class="pc" data-cat="3"><div class="pc-img" style="background:#FBF0F4"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="27" y="8" width="6" height="50" rx="3" fill="#D4537E"/><rect x="27" y="8" width="6" height="10" rx="3" fill="#BE3A68"/><rect x="27" y="4" width="6" height="6" rx="1" fill="#AA2858"/><ellipse cx="30" cy="62" rx="7" ry="3" fill="#D4537E" opacity="0.25"/></svg><div class="bdg bdg-l">32 shades</div></div><div class="pc-cat">Lip colour</div><div class="pc-name">Bullet Lipstick</div><div class="pc-bot"><div><div class="pc-price">₹349</div><div class="pc-rat">★ 4.7</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="3"><div class="pc-img" style="background:#FDF5E8"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="10" y="32" width="40" height="36" rx="3" fill="#E8C8B0"/><rect x="10" y="32" width="40" height="9" rx="3" fill="#D8B098"/><rect x="16" y="18" width="28" height="16" rx="2" fill="#D0A888"/><rect x="21" y="12" width="18" height="8" rx="1.5" fill="#C0987A"/></svg></div><div class="pc-cat">Base</div><div class="pc-name">Foundation & Concealer</div><div class="pc-bot"><div><div class="pc-price">₹599</div><div class="pc-rat">★ 4.6</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="3"><div class="pc-img" style="background:#F5F0F8"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><ellipse cx="30" cy="54" rx="16" ry="13" fill="#F0E0F0"/><ellipse cx="30" cy="54" rx="10" ry="8" fill="#D8A8D8"/><rect x="28" y="8" width="4" height="38" rx="2" fill="#C89898"/></svg></div><div class="pc-cat">Face colour</div><div class="pc-name">Blush & Highlighter</div><div class="pc-bot"><div><div class="pc-price">₹449</div><div class="pc-rat">★ 4.8</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="cat-sep" data-sep="4"><div class="sep-text">Fragrance</div></div>
+
+    <div class="pc" data-cat="4"><div class="pc-img" style="background:#F8F2F5"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="18" y="30" width="24" height="40" rx="3" fill="#E8D0DC"/><rect x="18" y="30" width="24" height="10" rx="3" fill="#D8B8C8"/><rect x="22" y="20" width="16" height="12" rx="2" fill="#C8A8B8"/><rect x="26" y="14" width="8" height="8" rx="1.5" fill="#B890A8"/><rect x="28" y="10" width="4" height="6" rx="1" fill="#A87898"/></svg><div class="bdg bdg-l">Rose</div></div><div class="pc-cat">Eau de parfum</div><div class="pc-name">Rose Saffron EDP 50ml</div><div class="pc-bot"><div><div class="pc-price">₹999</div><div class="pc-rat">★ 4.7</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="4"><div class="pc-img" style="background:#F5F2E8"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="18" y="30" width="24" height="40" rx="3" fill="#E8E0C8"/><rect x="18" y="30" width="24" height="10" rx="3" fill="#D8CCB0"/><rect x="22" y="20" width="16" height="12" rx="2" fill="#C8BC98"/><rect x="26" y="14" width="8" height="8" rx="1.5" fill="#B8AC88"/><rect x="28" y="10" width="4" height="6" rx="1" fill="#A89878"/></svg><div class="bdg bdg-d">New</div></div><div class="pc-cat">Eau de parfum</div><div class="pc-name">Oud & Amber EDP 50ml</div><div class="pc-bot"><div><div class="pc-price">₹1,099</div><div class="pc-rat">★ 4.8</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="ban" data-cat="4"><div class="ban-deco"><svg width="120" height="120" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="58" stroke="white" stroke-width="1"/><circle cx="60" cy="60" r="38" stroke="white" stroke-width="1"/></svg></div><div class="ban-ey">Limited edition</div><div class="ban-ti">Midnight in Marrakesh</div><div class="ban-ct">Shop →</div></div>
+
+    <div class="cat-sep" data-sep="5"><div class="sep-text">Body care</div></div>
+
+    <div class="pc" data-cat="5"><div class="pc-img" style="background:#F5F5EE"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="11" y="10" width="38" height="58" rx="4" fill="#E8E5D5"/><rect x="11" y="10" width="38" height="16" rx="4" fill="#D8D4C0"/><rect x="17" y="6" width="26" height="6" rx="2" fill="#C8C4AC"/><text x="30" y="46" font-size="5.5" fill="#666" text-anchor="middle" font-family="Inter,sans-serif">BODY SPF</text></svg></div><div class="pc-cat">Body sunscreen</div><div class="pc-name">SPF 50 Body Lotion</div><div class="pc-bot"><div><div class="pc-price">₹399</div><div class="pc-rat">★ 4.5</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="5"><div class="pc-img" style="background:#EEF5F2"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="11" y="10" width="38" height="58" rx="4" fill="#C8E0D8"/><rect x="11" y="10" width="38" height="16" rx="4" fill="#B0CEC5"/><rect x="17" y="6" width="26" height="6" rx="2" fill="#98BCAC"/><text x="30" y="46" font-size="5.5" fill="#206050" text-anchor="middle" font-family="Inter,sans-serif">SQUALANE</text></svg><div class="bdg bdg-d">New</div></div><div class="pc-cat">Body oil</div><div class="pc-name">Squalane Glow Body Oil</div><div class="pc-bot"><div><div class="pc-price">₹649</div><div class="pc-rat">★ 4.8</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+    <div class="pc" data-cat="5"><div class="pc-img" style="background:#F8F0EA"><svg viewBox="0 0 60 80" width="65%" height="65%" fill="none"><rect x="11" y="10" width="38" height="58" rx="4" fill="#EAD5C0"/><rect x="11" y="10" width="38" height="16" rx="4" fill="#D8C0A5"/><rect x="17" y="6" width="26" height="6" rx="2" fill="#C8AE90"/><text x="30" y="46" font-size="5.5" fill="#7A4A20" text-anchor="middle" font-family="Inter,sans-serif">BODY SCRUB</text></svg></div><div class="pc-cat">Body scrub</div><div class="pc-name">Coffee & Sugar Scrub</div><div class="pc-bot"><div><div class="pc-price">₹349</div><div class="pc-rat">★ 4.6</div></div><div class="bag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div></div></div>
+
+  </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<div style="margin-top:14px;text-align:center">
+  <p style="font-family:'Inter',sans-serif;font-size:10px;color:#999;letter-spacing:0.5px">← swipe the product row →</p>
+</div>
+</div>
+
+<script>
+var row = document.getElementById('row');
+var tabs = document.querySelectorAll('.tab');
+var tabsRow = document.getElementById('tabs');
+
+var catNames = ['Bestsellers','Skincare','Hair care','Makeup','Fragrance','Body care'];
+
+function getActiveCat(){
+  var center = row.scrollLeft + row.offsetWidth * 0.35;
+  var items = row.querySelectorAll('[data-cat]');
+  var active = 0;
+  items.forEach(function(el){
+    if(el.offsetLeft <= center) active = parseInt(el.getAttribute('data-cat')) || 0;
+  });
+  return active;
+}
+
+function setActive(i){
+  tabs.forEach(function(t,idx){ t.classList.toggle('active', idx===i); });
+  var at = tabs[i];
+  if(at) tabsRow.scrollTo({left: at.offsetLeft - tabsRow.offsetWidth/2 + at.offsetWidth/2, behavior:'smooth'});
+}
+
+row.addEventListener('scroll', function(){
+  setActive(getActiveCat());
+});
+
+tabs.forEach(function(tab){
+  tab.addEventListener('click', function(){
+    var i = parseInt(tab.getAttribute('data-i'));
+    var target = row.querySelector('[data-cat="'+i+'"]');
+    if(target) row.scrollTo({left: target.offsetLeft - 18, behavior:'smooth'});
+  });
+});
+</script>
